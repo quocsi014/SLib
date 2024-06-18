@@ -1,19 +1,26 @@
 package com.example.SLib.entity;
 
+import com.example.SLib.exception.InvalidDataException;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Entity
+@Entity()
+@Table(name = "documents")
 @Setter
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
 public class Document {
+
+    public static final String OBJ_NAME = "Document";
+    
     @Id
     private String id;
 
@@ -50,5 +57,6 @@ public class Document {
     @Column
     private String format;
 
+   
 
 }
