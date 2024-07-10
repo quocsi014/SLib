@@ -1,6 +1,9 @@
 package com.example.SLib.dto;
 
-import com.example.SLib.exception.InvalidDataException;
+import java.util.Set;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import lombok.AllArgsConstructor;
@@ -12,12 +15,16 @@ import lombok.Setter;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-public class DocumentDTO{
+@JsonInclude(JsonInclude.Include.NON_NULL)
+public class DocumentDTO {
 
     private String id;
 
     @JsonProperty("type_id")
     private String typeId;
+
+    @JsonProperty("document_type")
+    private DocumentTypeDTO documentType;
 
     private String isbn;
 
@@ -29,24 +36,22 @@ public class DocumentDTO{
     private String publisher;
 
     @JsonProperty("publication_year")
-    private int publicationYear;
+    private Integer publicationYear;
 
-    private int pages;
+    private Integer pages;
 
     private String language;
 
     private String description;
 
-    private int amount;
+    private Integer amount;
 
     private String format;
 
-    public void checkNullTitle(){
-        if(this.getTitle() == null){
-            throw new InvalidDataException("Title is required");
-        }
-    }
+    @JsonProperty("authors")
+    private Set<AuthorDTO> authors;
 
-    
+    @JsonProperty("author_ids")
+    private Set<String> authorIds;
 
 }
