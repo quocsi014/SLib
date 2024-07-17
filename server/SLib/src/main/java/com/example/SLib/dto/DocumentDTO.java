@@ -2,7 +2,6 @@ package com.example.SLib.dto;
 
 import java.util.Set;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 

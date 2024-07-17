@@ -3,9 +3,6 @@ package com.example.SLib.entity;
 import java.util.HashSet;
 import java.util.Set;
 
-import org.hibernate.annotations.OnDelete;
-import org.hibernate.annotations.OnDeleteAction;
-
 import com.example.SLib.enums.Gender;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
