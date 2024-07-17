@@ -42,6 +42,11 @@ public class GlobalExceptionHandler {
     return new ErrorResponse(e.getMessage(), HttpStatus.BAD_REQUEST.toString());
   }
 
+  @ExceptionHandler(UnauthorizedException.class)
+  @ResponseStatus(HttpStatus.UNAUTHORIZED)
+  public ErrorResponse handleUnauthorizedException(UnauthorizedException e, WebRequest req){
+    return new ErrorResponse(e.getMessage(), HttpStatus.UNAUTHORIZED.toString());
+  }
   
 
 }
