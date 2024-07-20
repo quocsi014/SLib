@@ -1,5 +1,6 @@
 package com.example.SLib.entity;
 
+import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -34,7 +35,7 @@ public class Author {
     private String name;
 
     @Column
-    private String birthday;
+    private LocalDate birthday;
 
     @Column
     private String bio;

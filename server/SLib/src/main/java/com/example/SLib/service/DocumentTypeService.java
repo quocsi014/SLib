@@ -17,7 +17,7 @@ import com.example.SLib.exception.SaveDataException;
 import com.example.SLib.mapper.DocumentTypeMapper;
 import com.example.SLib.repository.IDocumentTypeRepo;
 import com.example.SLib.service.iservice.IDocumentTypeService;
-import com.example.SLib.validator.DataValidator;
+import com.example.SLib.validation.DataValidator;
 
 @Service
 public class DocumentTypeService implements IDocumentTypeService {

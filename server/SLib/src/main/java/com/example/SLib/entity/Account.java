@@ -7,6 +7,9 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.MapsId;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -23,6 +26,7 @@ public class Account {
   public static String OBJ_NAME = "Account";
 
   @Id
+  @Column(name = "user_id")
   private String id;
 
   @Column
@@ -33,7 +37,11 @@ public class Account {
 
   @Enumerated(EnumType.STRING)
   @Column
-  private Role role;
+  private Role role = Role.READER;
+
+  @OneToOne
+  @MapsId
+  @JoinColumn(name = "user_id")
+  private Reader reader;
 
 }
-

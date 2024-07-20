@@ -15,7 +15,7 @@ import com.example.SLib.exception.SaveDataException;
 import com.example.SLib.mapper.AuthorMapper;
 import com.example.SLib.repository.IAuthorRepo;
 import com.example.SLib.service.iservice.IAuthorService;
-import com.example.SLib.validator.DataValidator;
+import com.example.SLib.validation.DataValidator;
 
 @Service
 public class AuthorService implements IAuthorService {

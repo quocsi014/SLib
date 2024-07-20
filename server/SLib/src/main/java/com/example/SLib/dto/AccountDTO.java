@@ -1,6 +1,7 @@
 package com.example.SLib.dto;
 
 import com.example.SLib.enums.Role;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -13,6 +14,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class AccountDTO {
   private String id;
   private String email;

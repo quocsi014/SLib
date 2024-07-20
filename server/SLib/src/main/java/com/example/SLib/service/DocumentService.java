@@ -11,8 +11,8 @@ import com.example.SLib.mapper.DocumentMapper;
 import com.example.SLib.repository.IAuthorRepo;
 import com.example.SLib.repository.IDocumentRepo;
 import com.example.SLib.service.iservice.IDocumentService;
-import com.example.SLib.validator.DataValidator;
-import com.example.SLib.validator.DocumentValidator;
+import com.example.SLib.validation.DataValidator;
+import com.example.SLib.validation.DocumentValidator;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
