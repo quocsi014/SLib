@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.example.SLib.dto.AccountDTO;
 import com.example.SLib.entity.Account;
 import com.example.SLib.exception.UnauthorizedException;
+import com.example.SLib.mapper.AccountMapper;
 import com.example.SLib.repository.IAccountRepo;
 import com.example.SLib.service.iservice.IAccountService;
 
@@ -17,7 +18,10 @@ public class AccountService implements IAccountService{
   @Autowired
   private IAccountRepo accountRepo;
 
-  public void Login(AccountDTO accountDTO){
+  @Autowired
+  private AccountMapper accountMapper;
+
+  public AccountDTO Login(AccountDTO accountDTO){
 
     Account account = accountRepo.findByEmail(accountDTO.getEmail()).orElseThrow(()->new UnauthorizedException("Email or password is incorrect"));
     
@@ -26,5 +30,7 @@ public class AccountService implements IAccountService{
     if(!passwordEncoder.matches(accountDTO.getPassword(), account.getPassword())){
       throw new UnauthorizedException("Email or password is incorrect");
     }
+
+    return accountMapper.toAccountDTO(account);
   }
 }

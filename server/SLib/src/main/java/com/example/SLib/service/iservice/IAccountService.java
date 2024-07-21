@@ -3,5 +3,5 @@ package com.example.SLib.service.iservice;
 import com.example.SLib.dto.AccountDTO;
 
 public interface IAccountService {
-  public void Login(AccountDTO account);
+  public AccountDTO Login(AccountDTO account);
 }
